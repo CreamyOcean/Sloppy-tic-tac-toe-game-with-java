@@ -36,9 +36,6 @@ class JBuild{
         frame.setBounds(1250, 500, x, y);
         clearFile();
 
-
-
-
     }
     public void bg(Color c){
         Container cont = frame.getContentPane();
@@ -58,7 +55,7 @@ class JBuild{
             frame.add(jb[i]);
         }
     }
-    static File f = new File("D:\\Users\\Whipo\\Desktop\\Coding\\Java\\Thing\\data.txt");
+    static File f = new File("D:\\Users\\Whipo\\Desktop\\Coding\\Java\\Thing\\data.txt"); //Switch the file address if you want
     public void paintComponent(Graphics g, boolean z) {
         if(z) {
             g.setColor(Color.blue);
@@ -87,7 +84,6 @@ class JBuild{
         FileReader fr = new FileReader(f);
         BufferedReader br = new BufferedReader(fr);
 
-
         PrintWriter out = new PrintWriter(new FileWriter(f, true));
         out.print(x);
         out.close();
@@ -101,7 +97,6 @@ class JBuild{
     public void victory() throws IOException, InterruptedException {
         //1 2 3 - 4 5 6 - 7 8 9 - 1 5 9 - 3 5 7 - 3 6 9 - 2 5 8 - 1 4 7
         System.out.println(sortedScore);
-
 
         Pattern patX
                 = Pattern
@@ -145,7 +140,7 @@ class JBuild{
         neu.ttt();
     }
     public void clearFile() throws FileNotFoundException {
-        Formatter ff = new Formatter("D:\\Users\\Whipo\\Desktop\\Coding\\Java\\Thing\\data.txt");
+        Formatter ff = new Formatter("D:\\Users\\Whipo\\Desktop\\Coding\\Java\\Thing\\data.txt"); //Switch the file address if you want
 
         ff.format("");
     }
@@ -177,7 +172,6 @@ class JBuild{
                     frame.setTitle("TTT: Turn Player 2");
                     remove();
 
-
                 } else if (frame.getTitle().equalsIgnoreCase("TTT: Turn Player 2")) {
                     paintComponent(jb[theChoice].getGraphics(), false);
                     frame.setTitle("TTT: Turn Player 1");
@@ -185,30 +179,16 @@ class JBuild{
                 }
             }
 
-
-
-
             @Override
-            public void mouseReleased(MouseEvent e) {
-
-
-
-            }
-
+            public void mouseReleased(MouseEvent e) {   }
             @Override
-            public void mouseEntered(MouseEvent e) {
-
-            }
-
+            public void mouseEntered(MouseEvent e) {}
             @Override
-            public void mouseExited(MouseEvent e) {
-            }
+            public void mouseExited(MouseEvent e) { }
         };
 
         for (JPanel jPanel : jb) {
-
             jPanel.addMouseListener(ml);
-
         }
     }
     public void remove(){
